@@ -1,3 +1,7 @@
+/* Logic for Native Interactive Chessboard
+Author: Nikos-Nikitas
+GitHub: nikosnikitas
+*/
 	function makeDroppable(e) {
 		e.preventDefault();
 		}
