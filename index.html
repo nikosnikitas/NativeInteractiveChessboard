@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Interactive ChessBoard</title>
+	<link rel="stylesheet" href="style.css">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+	<header>
+		<h1> 
+			Welcome to the Interactive Chessboard! 
+			Drag the pieces around and study your positions.
+		</h1>
+	</header>
+	<div class="buttons">
+		<button onclick="start(event)"> Start Position</button>
+		<button onclick="empty(event)"> Empty Board </button>
+		<button onclick="reset(event)"> Reset </button>
+	</div>
+	<div id="full-board" ondragover="makeDroppable(event)" ondrop="drop(event)">
+		<table id="chessboard" cellspacing="0">
+			<td> 8 </td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="br" draggable="true" ondragstart="drag(event)" >&#9820;</span>
+			</td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="bn" draggable="true" ondragstart="drag(event)" >&#9822;</span>
+			</td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="bb" draggable="true" ondragstart="drag(event)">&#9821;</span>
+			</td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="bq" draggable="true" ondragstart="drag(event)">&#9819;</span>
+			</td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="bk" draggable="true" ondragstart="drag(event)" >&#9818;</span>
+			</td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="bb2" draggable="true" ondragstart="drag(event)">&#9821;</span>
+			</td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="bn2" draggable="true" ondragstart="drag(event)" >&#9822;</span>
+			</td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="br2" draggable="true" ondragstart="drag(event)" >&#9820;</span>
+			</td>
+			<tr></tr>
+			<td> 7 </td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="bp" draggable="true" ondragstart="drag(event)">&#9823;</span>
+			</td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="bp2" draggable="true" ondragstart="drag(event)">&#9823;</span>
+			</td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="bp3" draggable="true" ondragstart="drag(event)">&#9823;</span>
+			</td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="bp4" draggable="true" ondragstart="drag(event)">&#9823;</span>
+			</td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="bp5" draggable="true" ondragstart="drag(event)">&#9823;</span>
+			</td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="bp6" draggable="true" ondragstart="drag(event)">&#9823;</span>
+			</td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="bp7" draggable="true" ondragstart="drag(event)">&#9823;</span>
+			</td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="bp" draggable="true" ondragstart="drag(event)">&#9823;</span>
+			</td>
+			<tr></tr>
+			<td> 6 </td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<tr></tr>
+			<td> 5 </td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<tr></tr>
+			<td> 4 </td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<tr></tr>
+			<td> 3 </td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<tr></tr>
+			<td> 2 </td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="wp" draggable="true" ondragstart="drag(event)">&#9817;</span>
+			</td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="wp2" draggable="true" ondragstart="drag(event)">&#9817;</span>
+			</td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="wp3" draggable="true" ondragstart="drag(event)">&#9817;</span>
+			</td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="wp4" draggable="true" ondragstart="drag(event)">&#9817;</span>
+			</td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="wp5" draggable="true" ondragstart="drag(event)">&#9817;</span>
+			</td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="wp6" draggable="true" ondragstart="drag(event)">&#9817;</span>
+			</td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="wp7" draggable="true" ondragstart="drag(event)">&#9817;</span>
+			</td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="wp8" draggable="true" ondragstart="drag(event)">&#9817;</span>
+			</td>
+			<tr></tr>
+			<td> 1 </td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="wr" draggable="true" ondragstart="drag(event)" >&#9814;</span>
+			</td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="wn" draggable="true" ondragstart="drag(event)" >&#9816;</span>
+			</td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="wb" draggable="true" ondragstart="drag(event)">&#9815;</span>
+			</td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="wq" draggable="true" ondragstart="drag(event)">&#9813;</span>
+			</td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="wk" draggable="true" ondragstart="drag(event)" >&#9812;</span>
+			</td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="wb2" draggable="true" ondragstart="drag(event)">&#9815;</span>
+			</td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="wn2" draggable="true" ondragstart="drag(event)" >&#9816;</span>
+			</td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)">
+				<span class="piece" id="wr2" draggable="true" ondragstart="drag(event)" >&#9814;</span>
+			</td>
+			<tr></tr>
+			<td></td>
+			<td>A</td>
+			<td>B</td>
+			<td>C</td>
+			<td>D</td>
+			<td>E</td>
+			<td>F</td>
+			<td>G</td>
+			<td>H</td>
+		</table>
+	</div>
+	<div id="empty-board" ondragover="makeDroppable(event)" ondrop="drop(event)">
+		<table id="chessboard" cellspacing="0">
+			<td> 8 </td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<tr></tr>
+			<td> 7 </td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<tr></tr>
+			<td> 6 </td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<tr></tr>
+			<td> 5 </td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<tr></tr>
+			<td> 4 </td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<tr></tr>
+			<td> 3 </td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<tr></tr>
+			<td> 2 </td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>			
+			<tr></tr>
+			<td> 1 </td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="black-square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<td class="square" ondragover="makeDroppable(event)" ondrop="drop(event)"></td>
+			<tr></tr>
+			<td></td>
+			<td>A</td>
+			<td>B</td>
+			<td>C</td>
+			<td>D</td>
+			<td>E</td>
+			<td>F</td>
+			<td>G</td>
+			<td>H</td>
+		</table>
+		<br/>
+		<p class="pieces-container" ondragover="makeDroppable(event)" ondrop="drop(event)">
+			<span class="piece" id="wk" draggable="true" ondragstart="drag(event)" >&#9812;</span>
+			<span class="piece" id="wq" draggable="true" ondragstart="drag(event)">&#9813;</span>
+			<span class="piece" id="wr" draggable="true" ondragstart="drag(event)" >&#9814;</span>
+			<span class="piece" id="wr2" draggable="true" ondragstart="drag(event)" >&#9814;</span>
+			<span class="piece" id="wb" draggable="true" ondragstart="drag(event)">&#9815;</span>
+			<span class="piece" id="wb2" draggable="true" ondragstart="drag(event)">&#9815;</span>
+			<span class="piece" id="wn" draggable="true" ondragstart="drag(event)" >&#9816;</span>
+			<span class="piece" id="wn2" draggable="true" ondragstart="drag(event)" >&#9816;</span>
+			<br/>
+			<span class="piece" id="wp" draggable="true" ondragstart="drag(event)">&#9817;</span>
+			<span class="piece" id="wp2" draggable="true" ondragstart="drag(event)">&#9817;</span>
+			<span class="piece" id="wp3" draggable="true" ondragstart="drag(event)">&#9817;</span>
+			<span class="piece" id="wp4" draggable="true" ondragstart="drag(event)">&#9817;</span>
+			<span class="piece" id="wp5" draggable="true" ondragstart="drag(event)">&#9817;</span>
+			<span class="piece" id="wp6" draggable="true" ondragstart="drag(event)">&#9817;</span>
+			<span class="piece" id="wp7" draggable="true" ondragstart="drag(event)">&#9817;</span>
+			<span class="piece" id="wp8" draggable="true" ondragstart="drag(event)">&#9817;</span>
+			<br/>
+			<span class="piece" id="bk" draggable="true" ondragstart="drag(event)" >&#9818;</span>
+			<span class="piece" id="bq" draggable="true" ondragstart="drag(event)">&#9819;</span>
+			<span class="piece" id="br" draggable="true" ondragstart="drag(event)" >&#9820;</span>
+			<span class="piece" id="br2" draggable="true" ondragstart="drag(event)" >&#9820;</span>
+			<span class="piece" id="bb" draggable="true" ondragstart="drag(event)">&#9821;</span>
+			<span class="piece" id="bb2" draggable="true" ondragstart="drag(event)">&#9821;</span>
+			<span class="piece" id="bn" draggable="true" ondragstart="drag(event)" >&#9822;</span>
+			<span class="piece" id="bn2" draggable="true" ondragstart="drag(event)" >&#9822;</span>
+			<br/>
+			<span class="piece" id="bp" draggable="true" ondragstart="drag(event)">&#9823;</span>
+			<span class="piece" id="bp2" draggable="true" ondragstart="drag(event)">&#9823;</span>
+			<span class="piece" id="bp3" draggable="true" ondragstart="drag(event)">&#9823;</span>
+			<span class="piece" id="bp4" draggable="true" ondragstart="drag(event)">&#9823;</span>
+			<span class="piece" id="bp5" draggable="true" ondragstart="drag(event)">&#9823;</span>
+			<span class="piece" id="bp6" draggable="true" ondragstart="drag(event)">&#9823;</span>
+			<span class="piece" id="bp7" draggable="true" ondragstart="drag(event)">&#9823;</span>
+			<span class="piece" id="bp8" draggable="true" ondragstart="drag(event)">&#9823;</span>
+		</p>
+	</div>
+	<footer>
+		<ul>
+			<li>
+		Made with <span id="heart"> &#9829; </span> and <span id="html">HTML</span>, <span id="css">CSS</span> and <span id="js">JavaScript</span> by Nikos-Nikitas.
+			</li>
+			<li> Let's connect! </li>
+			<li>  
+				<a href="https://www.github.com/nikosnikitas"> GitHub </a> 
+			</li>
+		</ul>
+	</footer>
+	<script src="/script.js"></script>
+</body>
+</html>
